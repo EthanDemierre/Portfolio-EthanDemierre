@@ -1,39 +1,39 @@
-import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, getRequestURL, getResponseHeader, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, createError, getRouterParam, readBody, getQuery as getQuery$1, getResponseStatusText } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/h3/dist/index.mjs';
+import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import './timing.js';globalThis.__timing__.logStart('Nitro Start');import { tmpdir } from 'node:os';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, getRequestURL, getResponseHeader, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, createError, getRouterParam, readBody, getQuery as getQuery$1, getResponseStatusText } from 'file:///root/app/code/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
 import { readFileSync, writeFileSync } from 'node:fs';
-import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import destr from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/destr/dist/index.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, joinRelativeURL } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/ufo/dist/index.mjs';
-import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/unhead/dist/server.mjs';
-import { isVNode, toValue, isRef } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/vue/index.mjs';
-import { walkResolver } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/unhead/dist/utils.mjs';
-import { renderToString } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/vue/server-renderer/index.mjs';
-import { createHooks } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/hookable/dist/index.mjs';
-import { createFetch, Headers as Headers$1 } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/ofetch/dist/node.mjs';
-import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/node-mock-http/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/unstorage/drivers/fs.mjs';
-import { digest } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/ohash/dist/index.mjs';
-import { klona } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/klona/dist/index.mjs';
-import defu, { defuFn } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/defu/dist/defu.mjs';
-import { snakeCase } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/scule/dist/index.mjs';
-import { getContext } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/unctx/dist/index.mjs';
-import { toRouteMatcher, createRouter } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/radix3/dist/index.mjs';
+import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///root/app/code/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import destr from 'file:///root/app/code/node_modules/destr/dist/index.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, joinRelativeURL } from 'file:///root/app/code/node_modules/ufo/dist/index.mjs';
+import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///root/app/code/node_modules/unhead/dist/server.mjs';
+import { isVNode, toValue, isRef } from 'file:///root/app/code/node_modules/vue/index.mjs';
+import { walkResolver } from 'file:///root/app/code/node_modules/unhead/dist/utils.mjs';
+import { renderToString } from 'file:///root/app/code/node_modules/vue/server-renderer/index.mjs';
+import { createDebugger, createHooks } from 'file:///root/app/code/node_modules/hookable/dist/index.mjs';
+import { createFetch, Headers as Headers$1 } from 'file:///root/app/code/node_modules/ofetch/dist/node.mjs';
+import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///root/app/code/node_modules/node-mock-http/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file:///root/app/code/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file:///root/app/code/node_modules/unstorage/drivers/fs.mjs';
+import { digest } from 'file:///root/app/code/node_modules/ohash/dist/index.mjs';
+import { klona } from 'file:///root/app/code/node_modules/klona/dist/index.mjs';
+import defu, { defuFn } from 'file:///root/app/code/node_modules/defu/dist/defu.mjs';
+import { snakeCase } from 'file:///root/app/code/node_modules/scule/dist/index.mjs';
+import { getContext } from 'file:///root/app/code/node_modules/unctx/dist/index.mjs';
+import { toRouteMatcher, createRouter } from 'file:///root/app/code/node_modules/radix3/dist/index.mjs';
 import { readFile } from 'node:fs/promises';
-import consola, { consola as consola$1 } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/consola/dist/index.mjs';
-import { ErrorParser } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/youch-core/build/index.js';
-import { Youch } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/youch/build/index.js';
-import { SourceMapConsumer } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/source-map/source-map.js';
+import consola, { consola as consola$1 } from 'file:///root/app/code/node_modules/consola/dist/index.mjs';
+import { ErrorParser } from 'file:///root/app/code/node_modules/youch-core/build/index.js';
+import { Youch } from 'file:///root/app/code/node_modules/youch/build/index.js';
+import { SourceMapConsumer } from 'file:///root/app/code/node_modules/source-map/source-map.js';
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { stringify, uneval } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/devalue/index.js';
-import { captureRawStackTrace, parseRawStackTrace } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/errx/dist/index.js';
-import { DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin } from 'file:///Users/ethandemierre/Desktop/github/Portfolio/node_modules/unhead/dist/plugins.mjs';
+import { stringify, uneval } from 'file:///root/app/code/node_modules/devalue/index.js';
+import { captureRawStackTrace, parseRawStackTrace } from 'file:///root/app/code/node_modules/errx/dist/index.js';
+import { DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin } from 'file:///root/app/code/node_modules/unhead/dist/plugins.mjs';
 
-const serverAssets = [{"baseName":"server","dir":"/Users/ethandemierre/Desktop/github/Portfolio/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"/root/app/code/server/assets"}];
 
 const assets = createStorage();
 
@@ -45,11 +45,11 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/ethandemierre/Desktop/github/Portfolio","watchOptions":{"ignored":[null]}}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/ethandemierre/Desktop/github/Portfolio/server","watchOptions":{"ignored":[null]}}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/ethandemierre/Desktop/github/Portfolio/.nuxt"}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/ethandemierre/Desktop/github/Portfolio/.nuxt/cache"}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/Users/ethandemierre/Desktop/github/Portfolio/.data/kv"}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/root/app/code","watchOptions":{"ignored":[null]}}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/root/app/code/server","watchOptions":{"ignored":[null]}}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/root/app/code/.nuxt"}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/root/app/code/.nuxt/cache"}));
+storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/root/app/code/.data/kv"}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -998,7 +998,7 @@ async function errorHandler(error, event) {
   // H3 will handle fallback
 }
 
-const rootDir = "/Users/ethandemierre/Desktop/github/Portfolio";
+const rootDir = "/root/app/code";
 
 const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
 
@@ -1017,7 +1017,7 @@ const devReducers = {
   URL: (data) => data instanceof URL ? data.toString() : void 0
 };
 const asyncContext = getContext("nuxt-dev", { asyncContext: true, AsyncLocalStorage });
-const _UN68dabpAQr_J9jlrrBizzq5tomnNF5vqNWNv86DRM = (nitroApp) => {
+const _DQ0b3atfF_DkY5ixq7rhPjzX1gg5OVJwocSpysXkew = (nitroApp) => {
   const handler = nitroApp.h3App.handler;
   nitroApp.h3App.handler = (event) => {
     return asyncContext.callAsync({ logs: [], event }, () => handler(event));
@@ -1086,21 +1086,59 @@ function onConsoleLog(callback) {
   consola$1.wrapConsole();
 }
 
+function defineNitroPlugin(def) {
+  return def;
+}
+
+const _V8nAQpA4AZgo4iEGLcWfiihrCzHk_b6VJHPowFjiwE = defineNitroPlugin((nitro) => {
+  createDebugger(nitro.hooks, { tag: "nitro-runtime" });
+});
+
+const globalTiming = globalThis.__timing__ || {
+  start: () => 0,
+  end: () => 0,
+  metrics: []
+};
+const timingMiddleware = eventHandler((event) => {
+  const start = globalTiming.start();
+  const _end = event.node.res.end;
+  event.node.res.end = function(chunk, encoding, cb) {
+    const metrics = [
+      ["Generate", globalTiming.end(start)],
+      ...globalTiming.metrics
+    ];
+    const serverTiming = metrics.map((m) => `-;dur=${m[1]};desc="${encodeURIComponent(m[0])}"`).join(", ");
+    if (!event.node.res.headersSent) {
+      event.node.res.setHeader("Server-Timing", serverTiming);
+    }
+    _end.call(event.node.res, chunk, encoding, cb);
+    return this;
+  }.bind(event.node.res);
+});
+const _VuiTFEu1NdKz4IzlUI0904ic5GYXz9YBLLnLOD9wR_c = defineNitroPlugin((nitro) => {
+  nitro.h3App.stack.unshift({
+    route: "/",
+    handler: timingMiddleware
+  });
+});
+
 const plugins = [
-  _UN68dabpAQr_J9jlrrBizzq5tomnNF5vqNWNv86DRM
+  _DQ0b3atfF_DkY5ixq7rhPjzX1gg5OVJwocSpysXkew,
+_V8nAQpA4AZgo4iEGLcWfiihrCzHk_b6VJHPowFjiwE,
+_VuiTFEu1NdKz4IzlUI0904ic5GYXz9YBLLnLOD9wR_c
 ];
 
-const _lazy_wIczK3 = () => Promise.resolve().then(function () { return portfolio_get$1; });
-const _lazy_M8Hnd7 = () => Promise.resolve().then(function () { return projects_get$1; });
-const _lazy_Wr8mOa = () => Promise.resolve().then(function () { return projects_post$1; });
-const _lazy_vr4mQ2 = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_9cOaGr = () => Promise.resolve().then(function () { return portfolio_get$1; });
+const _lazy_ARLKxd = () => Promise.resolve().then(function () { return projects_get$1; });
+const _lazy_1_WSgJ = () => Promise.resolve().then(function () { return projects_post$1; });
+const _lazy_AS_Wdz = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/api/portfolio', handler: _lazy_wIczK3, lazy: true, middleware: false, method: "get" },
-  { route: '/api/projects', handler: _lazy_M8Hnd7, lazy: true, middleware: false, method: "get" },
-  { route: '/api/projects', handler: _lazy_Wr8mOa, lazy: true, middleware: false, method: "post" },
-  { route: '/__nuxt_error', handler: _lazy_vr4mQ2, lazy: true, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_vr4mQ2, lazy: true, middleware: false, method: undefined }
+  { route: '/api/portfolio', handler: _lazy_9cOaGr, lazy: true, middleware: false, method: "get" },
+  { route: '/api/projects', handler: _lazy_ARLKxd, lazy: true, middleware: false, method: "get" },
+  { route: '/api/projects', handler: _lazy_1_WSgJ, lazy: true, middleware: false, method: "post" },
+  { route: '/__nuxt_error', handler: _lazy_AS_Wdz, lazy: true, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_AS_Wdz, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -1500,8 +1538,8 @@ function publicAssetsURL(...path) {
 
 const APP_ROOT_OPEN_TAG = `<${appRootTag}${propsToString(appRootAttrs)}>`;
 const APP_ROOT_CLOSE_TAG = `</${appRootTag}>`;
-const getClientManifest = () => import('file:///Users/ethandemierre/Desktop/github/Portfolio/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
-const getServerEntry = () => import('file:///Users/ethandemierre/Desktop/github/Portfolio/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
+const getClientManifest = () => import('file:///root/app/code/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getServerEntry = () => import('file:///root/app/code/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
 const getSSRStyles = lazyCachedFunction(() => Promise.resolve().then(function () { return styles$1; }).then((r) => r.default || r));
 const getSSRRenderer = lazyCachedFunction(async () => {
   const manifest = await getClientManifest();
@@ -1943,5 +1981,5 @@ const template = "";
 const _virtual__spaTemplate = /*#__PURE__*/Object.freeze({
   __proto__: null,
   template: template
-});
+});;globalThis.__timing__.logEnd('Nitro Start');
 //# sourceMappingURL=index.mjs.map
