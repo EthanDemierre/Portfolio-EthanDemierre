@@ -1,0 +1,199 @@
+* {
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+} 
+
+@font-face {
+    font-family: 'lovelace';
+    src: 
+         url('/fonts/Lovelace-BoldItalic.ttf') format('truetype');
+         
+    font-weight: normal;
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: 'coralpixel';
+    src: 
+         url('/fonts/CoralPixels-Regular.ttf') format('truetype');
+         
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mono-med';
+    src: 
+         url('/fonts/DMMono-Medium.ttf') format('truetype');
+         
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mono-light-ita';
+    src: 
+         url('/fonts/DMMono-LightItalic.ttf') format('truetype');
+        
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'Mono-light';
+    src: 
+         url('/fonts/DMMono-Light.ttf') format('truetype');
+        
+    font-style: normal;
+}
+  
+:root {
+    --black: #161616;
+    --blue: #2600FF;
+    --red: #FF0000;
+}
+
+h1 {
+    font-family: 'lovelace', sans-serif;
+    text-align: center;
+    font-size: 10rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 8rem;
+    letter-spacing: 0.0375rem;
+}
+
+@media (max-width: 1440px) {
+    h1 {
+        font-size: 9rem;
+        line-height: 7rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 7rem;
+        line-height: 5.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 4.5rem;
+        line-height: 3.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5rem;
+        line-height: 2rem;
+    }
+}
+
+h2 {
+    font-family: 'Mono-med', sans-serif;
+    font-weight: 700;
+    font-size: 5.5rem;
+}
+
+@media (max-width: 1024px) {
+    h2 {
+        font-size: 4.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+h3 {
+    font-family: 'Mono-med', sans-serif;
+    font-weight: 700;
+    font-size: 4.5rem;
+}
+
+@media (max-width: 1024px) {
+    h3 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h3 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h3 {
+        font-size: 1.75rem;
+    }
+}
+
+h4 {
+    font-family: 'Mono-med', sans-serif;
+    font-weight: 400; 
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 0.8125rem;
+    letter-spacing: 0.00375rem;
+}
+
+h5 {
+    font-family: 'Mono-med', sans-serif;
+    font-weight: 700; 
+    font-size: 1rem; 
+}
+
+p {
+    font-family: 'Mono-med', sans-serif;
+    font-weight: 300; 
+    line-height: 1rem; 
+    letter-spacing: 0.0175rem;
+    font-size: 0.875rem;
+}
+
+a {
+    font-family: 'Mono-light-ita';
+    font-size: 2rem;
+    line-height: 0.8125rem;
+    letter-spacing: 0.00625rem;
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+    a {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    a {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    a {
+        font-size: 1.1rem;
+    }
+}
+
+b {
+    font-family: 'coralpixel', sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem;
+    letter-spacing: 0.05rem;
+}

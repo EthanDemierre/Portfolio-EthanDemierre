@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Blurrr",
+      "image": "/img/projet/projet1.png",
+      "date": "2024",
+      "description": "Description courte du projet 1",
+      "medium": "Photographie"
+    },
+    {
+      "id": 2,
+      "title": "Projet 2",
+      "image": "/img/projet/projet2.jpg",
+      "date": "2024",
+      "description": "Description courte du projet 2",
+      "medium": "Animation / 3D"
+    },
+    {
+      "id": 3,
+      "title": "Projet 3",
+      "image": "/img/projet/projet3.jpg",
+      "date": "2023",
+      "description": "Description courte du projet 3",
+      "medium": "Interactif / Code"
+    },
+    {
+      "id": 5,
+      "title": "Projet 5",
+      "image": "/img/projet/projet4.jpg",
+      "date": "2023",
+      "description": "Description courte du projet 5",
+      "medium": "Illustration / Design"
+    },
+    {
+      "id": 6,
+      "title": "test 6",
+      "image": "/img/projet/projet5.jpg",
+      "date": "2022",
+      "description": "Description courte du projet rererere",
+      "medium": "Prototype / UX"
+    },
+    {
+      "id": 7,
+      "title": "Nouveau Projet",
+      "image": "",
+      "date": "2026",
+      "description": "",
+      "medium": ""
+    }
+  ]
+}
