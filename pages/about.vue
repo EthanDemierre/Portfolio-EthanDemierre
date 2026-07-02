@@ -306,13 +306,14 @@ export default {
     gap: 0.75rem;
     margin-top: 1.25rem;
     padding: 0 1rem;
+    align-items: center;
   }
 
   .pdf-link {
-    width: 100%;
-    padding: 0.6rem 1rem;
+    padding: 0.6rem 1.2rem;
     font-size: 11px;
     justify-content: center;
+    display: flex;
   }
 }
 
