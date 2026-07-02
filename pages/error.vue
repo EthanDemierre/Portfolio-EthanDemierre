@@ -10,9 +10,9 @@
     <div class="game-container">
       <div class="game-section">
         <div class="game-wrapper">
-          <canvas 
-            id="gameCanvas" 
-            width="300" 
+          <canvas
+            id="gameCanvas"
+            width="300"
             height="300"
             @keydown="handleKeyPress"
             tabindex="1"
@@ -26,6 +26,43 @@
               {{ gameRunning ? 'En cours...' : 'Démarrer' }}
             </button>
             <button @click="resetGame" class="btn-reset">Réinitialiser</button>
+          </div>
+
+          <div class="mobile-controls">
+            <button
+              @click="moveUp"
+              class="mobile-btn mobile-btn-up"
+              title="Haut"
+              aria-label="Move Up"
+            >
+              ▲
+            </button>
+            <div class="mobile-controls-horizontal">
+              <button
+                @click="moveLeft"
+                class="mobile-btn mobile-btn-left"
+                title="Gauche"
+                aria-label="Move Left"
+              >
+                ◄
+              </button>
+              <button
+                @click="moveDown"
+                class="mobile-btn mobile-btn-down"
+                title="Bas"
+                aria-label="Move Down"
+              >
+                ▼
+              </button>
+              <button
+                @click="moveRight"
+                class="mobile-btn mobile-btn-right"
+                title="Droite"
+                aria-label="Move Right"
+              >
+                ►
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -230,6 +267,26 @@ export default {
       } else if (key === 'ArrowRight' && this.direction.x === 0) {
         this.nextDirection = { x: 1, y: 0 };
         event.preventDefault();
+      }
+    },
+    moveUp() {
+      if (this.direction.y === 0) {
+        this.nextDirection = { x: 0, y: -1 };
+      }
+    },
+    moveDown() {
+      if (this.direction.y === 0) {
+        this.nextDirection = { x: 0, y: 1 };
+      }
+    },
+    moveLeft() {
+      if (this.direction.x === 0) {
+        this.nextDirection = { x: -1, y: 0 };
+      }
+    },
+    moveRight() {
+      if (this.direction.x === 0) {
+        this.nextDirection = { x: 1, y: 0 };
       }
     },
     endGame() {
@@ -464,6 +521,68 @@ export default {
 .btn-reset:hover {
   background-color: var(--blue);
   color: white;
+}
+
+.mobile-controls {
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.mobile-controls-horizontal {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.mobile-btn {
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--blue);
+  background-color: var(--blue);
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+  touch-action: manipulation;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-btn:active {
+  transform: scale(0.95);
+  background-color: #0066cc;
+}
+
+.mobile-btn:hover {
+  background-color: #0066cc;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .mobile-controls {
+    display: flex;
+  }
+
+  #gameCanvas {
+    width: 250px;
+    height: 250px;
+  }
+
+  .mobile-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
 }
 
 .leaderboard-section {
