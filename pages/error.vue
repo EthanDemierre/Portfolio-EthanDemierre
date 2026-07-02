@@ -683,6 +683,11 @@ export default {
 .rank {
   text-align: center;
   font-weight: 600;
+  color: white;
+}
+
+.name {
+  color: white;
 }
 
 .score {
