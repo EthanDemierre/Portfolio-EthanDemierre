@@ -330,6 +330,7 @@ export default {
   margin-top: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   width: 100%;
   padding: 0 2rem;
   box-sizing: border-box;
