@@ -70,84 +70,83 @@
   </div>
 </template>
 
-<script>
-export default {
-  middleware: 'cms-auth',
-  async setup() {
-    const { data: fetchedProjects } = await useFetch('/api/projects');
-    return { fetchedProjects };
-  },
-  data() {
-    return {
-      projects: [],
-      originalProjects: [],
-      message: null
-    };
-  },
-  watch: {
-    fetchedProjects: {
-      immediate: true,
-      handler(newProjects) {
-        if (newProjects) {
-          this.projects = JSON.parse(JSON.stringify(newProjects));
-          this.originalProjects = JSON.parse(JSON.stringify(newProjects));
-        }
-      }
-    }
-  },
-  methods: {
-    addProject() {
-      const newId = Math.max(...this.projects.map(p => p.id), 0) + 1;
-      this.projects.push({
-        id: newId,
-        title: 'Nouveau Projet',
-        image: '',
-        date: new Date().getFullYear().toString(),
-        description: '',
-        medium: ''
-      });
-    },
-    removeProject(index) {
-      if (confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')) {
-        this.projects.splice(index, 1);
-      }
-    },
-    async saveProjects() {
-      try {
-        const response = await fetch('/api/projects', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(this.projects)
-        });
-        const result = await response.json();
-        if (result.success) {
-          this.originalProjects = JSON.parse(JSON.stringify(this.projects));
-          this.showMessage('Projets sauvegardés avec succès !', 'success');
-        } else {
-          this.showMessage('Erreur lors de la sauvegarde', 'error');
-        }
-      } catch (error) {
-        console.error('Erreur:', error);
-        this.showMessage('Erreur lors de la sauvegarde', 'error');
-      }
-    },
-    resetProjects() {
-      if (confirm('Annuler tous les changements ?')) {
-        this.projects = JSON.parse(JSON.stringify(this.originalProjects));
-      }
-    },
-    showMessage(text, type) {
-      this.message = { text, type };
-      setTimeout(() => { this.message = null; }, 3000);
-    },
-    goHome() {
-      this.$router.push('/');
-    },
-    logout() {
-      localStorage.removeItem('cmsAuth');
-      this.$router.push('/cms-login');
-    }
+<script setup>
+import { ref, watch } from 'vue';
+
+definePageMeta({
+  middleware: 'cms-auth'
+});
+
+const router = useRouter();
+const { data: fetchedProjects } = await useFetch('/api/projects');
+
+const projects = ref([]);
+const originalProjects = ref([]);
+const message = ref(null);
+
+watch(fetchedProjects, (newProjects) => {
+  if (newProjects) {
+    projects.value = JSON.parse(JSON.stringify(newProjects));
+    originalProjects.value = JSON.parse(JSON.stringify(newProjects));
   }
+}, { immediate: true });
+
+const addProject = () => {
+  const newId = Math.max(...projects.value.map(p => p.id), 0) + 1;
+  projects.value.push({
+    id: newId,
+    title: 'Nouveau Projet',
+    image: '',
+    date: new Date().getFullYear().toString(),
+    description: '',
+    medium: ''
+  });
+};
+
+const removeProject = (index) => {
+  if (confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')) {
+    projects.value.splice(index, 1);
+  }
+};
+
+const saveProjects = async () => {
+  try {
+    const response = await fetch('/api/projects', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(projects.value)
+    });
+    const result = await response.json();
+    if (result.success) {
+      originalProjects.value = JSON.parse(JSON.stringify(projects.value));
+      showMessage('Projets sauvegardés avec succès !', 'success');
+    } else {
+      showMessage('Erreur lors de la sauvegarde', 'error');
+    }
+  } catch (error) {
+    console.error('Erreur:', error);
+    showMessage('Erreur lors de la sauvegarde', 'error');
+  }
+};
+
+const resetProjects = () => {
+  if (confirm('Annuler tous les changements ?')) {
+    projects.value = JSON.parse(JSON.stringify(originalProjects.value));
+  }
+};
+
+const showMessage = (text, type) => {
+  message.value = { text, type };
+  setTimeout(() => { message.value = null; }, 3000);
+};
+
+const goHome = () => {
+  router.push('/');
+};
+
+const logout = () => {
+  localStorage.removeItem('cmsAuth');
+  router.push('/cms-login');
 };
 </script>
 

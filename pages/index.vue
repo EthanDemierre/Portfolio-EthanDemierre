@@ -112,6 +112,7 @@ export default {
   padding: 2rem;
   border: 1rem solid var(--blue);
   pointer-events: none;
+  background-color: white;
 }
 
 .page-main > * {
@@ -235,12 +236,12 @@ export default {
 
 @media (max-width: 480px) {
   .flower-icon {
-    position: fixed;
+    position: absolute;
     width: 3rem;
     height: 3rem;
-    top: 0.75rem;
-    left: 1.1rem;
-    z-index: 30;
+    top: -0.75rem;
+    left: 0.5rem;
+    z-index: 2;
   }
 }
 

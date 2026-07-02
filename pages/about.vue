@@ -76,13 +76,34 @@ export default {
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
-  padding: 2rem;
+  padding: 1rem;
   border: 1rem solid var(--blue);
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: white;
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+    padding: 0.75rem;
+    border-width: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    padding: 0.5rem;
+    border-width: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    padding: 0.35rem;
+    border-width: 0.35rem;
+  }
 }
 
 .carre-wrapper {
@@ -285,13 +306,14 @@ export default {
     gap: 0.75rem;
     margin-top: 1.25rem;
     padding: 0 1rem;
+    align-items: center;
   }
 
   .pdf-link {
-    width: 100%;
-    padding: 0.6rem 1rem;
+    padding: 0.6rem 1.2rem;
     font-size: 11px;
     justify-content: center;
+    display: flex;
   }
 }
 
@@ -309,6 +331,7 @@ export default {
   margin-top: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   width: 100%;
   padding: 0 2rem;
   box-sizing: border-box;
