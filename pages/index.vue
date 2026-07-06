@@ -33,44 +33,8 @@
 <script>
 export default {
   mounted() {
-    const iframe = document.querySelector('.cables-iframe');
-    if (iframe) {
-      iframe.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        const touch = e.touches[0];
-        const mouseEvent = new MouseEvent('mousedown', {
-          bubbles: true,
-          cancelable: true,
-          view: window,
-          clientX: touch.clientX,
-          clientY: touch.clientY
-        });
-        iframe.dispatchEvent(mouseEvent);
-      });
-
-      iframe.addEventListener('touchmove', (e) => {
-        e.preventDefault();
-        const touch = e.touches[0];
-        const mouseEvent = new MouseEvent('mousemove', {
-          bubbles: true,
-          cancelable: true,
-          view: window,
-          clientX: touch.clientX,
-          clientY: touch.clientY
-        });
-        iframe.dispatchEvent(mouseEvent);
-      });
-
-      iframe.addEventListener('touchend', (e) => {
-        e.preventDefault();
-        const mouseEvent = new MouseEvent('mouseup', {
-          bubbles: true,
-          cancelable: true,
-          view: window
-        });
-        iframe.dispatchEvent(mouseEvent);
-      });
-    }
+    // Cables.gl handles its own interactions
+    // No event manipulation needed on desktop
   }
 };
 </script>
@@ -80,12 +44,13 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   border: 0;
-  z-index: 2;
+  z-index: 1;
   pointer-events: auto;
   touch-action: auto;
+  background-color: #000;
 }
 
 @media (hover: none) and (pointer: coarse) {
@@ -102,8 +67,8 @@ export default {
 }
 
 .page-main {
-  position: relative;
-  z-index: 20;
+  position: fixed;
+  z-index: 2;
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
@@ -112,7 +77,9 @@ export default {
   padding: 2rem;
   border: 1rem solid var(--blue);
   pointer-events: none;
-  background-color: white;
+  background-color: transparent;
+  top: 0;
+  left: 0;
 }
 
 .page-main > * {
