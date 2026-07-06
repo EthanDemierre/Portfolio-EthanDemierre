@@ -44,12 +44,13 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   border: 0;
-  z-index: 2;
+  z-index: 1;
   pointer-events: auto;
   touch-action: auto;
+  background-color: #000;
 }
 
 @media (hover: none) and (pointer: coarse) {
@@ -66,8 +67,8 @@ export default {
 }
 
 .page-main {
-  position: relative;
-  z-index: 20;
+  position: fixed;
+  z-index: 2;
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
@@ -76,7 +77,9 @@ export default {
   padding: 2rem;
   border: 1rem solid var(--blue);
   pointer-events: none;
-  background-color: white;
+  background-color: transparent;
+  top: 0;
+  left: 0;
 }
 
 .page-main > * {
