@@ -33,44 +33,8 @@
 <script>
 export default {
   mounted() {
-    const iframe = document.querySelector('.cables-iframe');
-    if (iframe) {
-      iframe.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        const touch = e.touches[0];
-        const mouseEvent = new MouseEvent('mousedown', {
-          bubbles: true,
-          cancelable: true,
-          view: window,
-          clientX: touch.clientX,
-          clientY: touch.clientY
-        });
-        iframe.dispatchEvent(mouseEvent);
-      });
-
-      iframe.addEventListener('touchmove', (e) => {
-        e.preventDefault();
-        const touch = e.touches[0];
-        const mouseEvent = new MouseEvent('mousemove', {
-          bubbles: true,
-          cancelable: true,
-          view: window,
-          clientX: touch.clientX,
-          clientY: touch.clientY
-        });
-        iframe.dispatchEvent(mouseEvent);
-      });
-
-      iframe.addEventListener('touchend', (e) => {
-        e.preventDefault();
-        const mouseEvent = new MouseEvent('mouseup', {
-          bubbles: true,
-          cancelable: true,
-          view: window
-        });
-        iframe.dispatchEvent(mouseEvent);
-      });
-    }
+    // Cables.gl handles its own interactions
+    // No event manipulation needed on desktop
   }
 };
 </script>
